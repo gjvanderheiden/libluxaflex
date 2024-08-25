@@ -24,6 +24,7 @@ jobs:
   
     - name: Install botan3
       run: |
+          sudo wget -O - https://deb.debian.org/debian/dists/experimental/release.gpg | sudo tee /etc/apt/trusted.gpg.d/debian-experimental.asc
           sudo add-apt-repository 'deb https://deb.debian.org/debian experimental main'
           sudo apt-get update -qq
           sudo apt -t experimental install -yq botan3
